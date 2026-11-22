@@ -306,12 +306,12 @@ const homepageContent = {
   "news": [
     {
       "date": "2026-10",
-      "text": "In Science Bulletin, co-first authors Haoyu Lu, Yu Li and Liyang Ma report that engineering the interface of a roughly 5 nm hafnium zirconium oxide film helped large, highly oriented polar grains grow. The film retained nearly all its polarization after 1,000 hours at 225 °C.",
-      "textZh": "陆皓宇、李昱和马丽洋以共同第一作者在 Science Bulletin 报道了超薄铁电薄膜的高温稳定性。团队通过调控界面，在约 5 nm 厚的铪锆氧化物薄膜中形成大尺寸、高取向的极性晶粒，使薄膜在 225 ℃ 下保持 1000 小时后仍几乎没有极化衰减。",
-      "image": "assets/hzo-high-temperature.png",
-      "caption": "Schematic of the HZO film on a Ti interlayer and TiN electrode. Arrows indicate polarization. Not to scale.",
-      "captionZh": "晶粒调控示意图。铪锆氧化物薄膜下方为 Ti 界面层和 TiN 电极，箭头表示极化方向。图中尺寸未按比例绘制。",
-      "url": "https://mp.weixin.qq.com/s/RniNj9-KF_qOjg5nC1whmQ",
+      "text": "Congratulations to Haoyu Lu and colleagues! By tailoring grain growth in a 5.5 nm hafnium zirconium oxide film, we made devices that withstood more than 100 million polarization reversals at 225 °C and retained their memory state for at least 1,000 hours at that temperature. Our work was published in Science Bulletin.",
+      "textZh": "祝贺 Haoyu Lu 和各位合作者！我们通过调控 5.5 纳米厚铪锆氧化物薄膜中的晶粒生长，使器件在 225 ℃ 下经受了超过 1 亿次极化翻转，并在同一温度下保持存储状态至少 1000 小时。这项工作发表于 Science Bulletin。",
+      "image": "assets/hzo-science-bulletin.jpg",
+      "caption": "The orientation map identifies two regions about 85 and 75 nm wide. Red stars in the lower panels mark the endurance and retention results at 225 °C. © Science Bulletin.",
+      "captionZh": "上方取向图标出了横向宽度约为 85 和 75 纳米的两个区域。下方两图中的红星分别标出器件在 225 ℃ 下的耐久性和保持性测试结果。图片 © Science Bulletin。",
+      "url": "https://www.eurekalert.org/news-releases/1143111",
       "paperUrl": "https://doi.org/10.1016/j.scib.2026.08.078"
     },
     {
