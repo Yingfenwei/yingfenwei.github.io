@@ -48,10 +48,13 @@ h2 { font-size: clamp(2.1rem,3.9vw,3rem); letter-spacing: -.045em; line-height: 
 .deck { margin: .65rem 0 1.65rem; max-width: 75ch }
 .text-link,.article-link { font-size: .95rem }
 .year-group { display: grid; grid-template-columns: 15% 1fr; border-top: 1px solid var(--rule) }
-.year-group > h3 { font: 1.65rem var(--serif); color: var(--red); padding-top: 1.4rem }
+.year-group > :is(h2,h3) { font: 1.65rem var(--serif); color: var(--red); padding-top: 1.4rem }
 .paper { padding: 1.3rem 0 1.5rem }
 .paper + .paper { border-top: 1px solid var(--rule) }
-.paper h4 { font: 400 1.35rem/1.32 var(--serif); margin: 0 0 .45rem }
+.paper :is(h3,h4) { font: 400 1.35rem/1.32 var(--serif); margin: 0 0 .45rem }
+.catalogue { padding-block: clamp(2.25rem,5vw,4rem) }
+.catalogue h1 { max-width: 100%; font-size: clamp(2.5rem,5vw,4rem) }
+.year-links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: 1.25rem 0 2rem }
 .authors { font-size: .95rem }
 .paper-meta { display: flex; align-items: baseline; flex-wrap: wrap; gap: .4rem 1.2rem; margin-top: .45rem }
 .venue { font: italic 1.04rem var(--serif) }
