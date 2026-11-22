@@ -66,9 +66,24 @@ function newsRow(news, dateFormat) {
   const time = element("time", dateFormat.format(new Date(news.date + "-01T00:00:00Z")));
   time.dateTime = news.date;
   const text = chinese && news.textZh ? news.textZh : news.text;
-  const content = news.url ? link(text, news.url) : element("span", text);
+  const content = news.url && !news.image ? link(text, news.url) : element("span", text);
   content.lang = chinese && news.textZh ? "zh-CN" : "en";
-  row.append(time, content);
+  const body = element("div");
+  body.append(content);
+  if (news.image) {
+    const figure = element("figure", "", "news-figure");
+    const image = element("img");
+    image.src = news.image;
+    image.alt = "";
+    image.loading = "lazy";
+    figure.append(image, element("figcaption", chinese ? news.captionZh || news.caption : news.caption));
+    body.append(figure);
+    const sources = element("div", "", "news-sources");
+    if (news.url) sources.append(link(chinese ? "新闻原文" : "News release", news.url));
+    if (news.paperUrl) sources.append(link(chinese ? "阅读论文" : "Read the paper", news.paperUrl));
+    body.append(sources);
+  }
+  row.append(time, body);
   return row;
 }
 

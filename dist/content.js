@@ -306,8 +306,13 @@ const homepageContent = {
   "news": [
     {
       "date": "2026-10",
-      "text": "Congratulations, Haoyu Lu!",
-      "textZh": "祝贺 Haoyu Lu！"
+      "text": "In Science Bulletin, co-first authors Haoyu Lu, Yu Li and Liyang Ma report that engineering the interface of a roughly 5 nm hafnium zirconium oxide film helped large, highly oriented polar grains grow. The film retained nearly all its polarization after 1,000 hours at 225 °C.",
+      "textZh": "陆皓宇、李昱和马丽洋以共同第一作者在 Science Bulletin 报道了超薄铁电薄膜的高温稳定性。团队通过调控界面，在约 5 nm 厚的铪锆氧化物薄膜中形成大尺寸、高取向的极性晶粒，使薄膜在 225 ℃ 下保持 1000 小时后仍几乎没有极化衰减。",
+      "image": "assets/hzo-high-temperature.png",
+      "caption": "Schematic of the HZO film on a Ti interlayer and TiN electrode. Arrows indicate polarization. Not to scale.",
+      "captionZh": "晶粒调控示意图。铪锆氧化物薄膜下方为 Ti 界面层和 TiN 电极，箭头表示极化方向。图中尺寸未按比例绘制。",
+      "url": "https://mp.weixin.qq.com/s/RniNj9-KF_qOjg5nC1whmQ",
+      "paperUrl": "https://doi.org/10.1016/j.scib.2026.08.078"
     },
     {
       "date": "2026-07",

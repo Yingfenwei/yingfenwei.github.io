@@ -63,6 +63,13 @@ h2 { font-size: clamp(2.1rem,3.9vw,3rem); letter-spacing: -.045em; line-height: 
 address { font-style: normal; margin-top: .9rem }
 #news ul { list-style: none; padding: 0; margin: 0 }
 #news li { display: grid; grid-template-columns: 5.5rem 1fr; padding-bottom: .9rem; gap: .5rem }
+.news-figure { max-width: 40rem; margin: .85rem 0 .35rem }
+.news-figure img { width: 100%; height: auto; display: block; border-radius: 3px }
+.news-figure figcaption { font-size: .87rem; color: var(--muted); margin-top: .35rem }
+.news-sources { display: flex; gap: 1.25rem; flex-wrap: wrap }
+@media (max-width: 620px) {
+  #news li:has(.news-figure),html:lang(zh-CN) #news li:has(.news-figure) { grid-template-columns: 1fr }
+}
 .archive summary { width: fit-content; padding: .4rem 0; color: var(--red); cursor: pointer }
 .archive[open] summary { margin-bottom: .65rem }
 time { color: var(--red); font-variant-numeric: tabular-nums }
