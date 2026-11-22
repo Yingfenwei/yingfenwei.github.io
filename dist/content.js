@@ -305,6 +305,11 @@ const homepageContent = {
   ],
   "news": [
     {
+      "date": "2026-10",
+      "text": "Congratulations, Haoyu Lu!",
+      "textZh": "祝贺 Haoyu Lu！"
+    },
+    {
       "date": "2026-07",
       "text": "Welcome to the new academic homepage.",
       "textZh": "欢迎访问新版学术主页。"
