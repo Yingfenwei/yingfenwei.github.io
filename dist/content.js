@@ -306,6 +306,15 @@ const homepageContent = {
   "news": [
     {
       "date": "2026-10",
+      "lead": "Congratulations to Beikai Ding and colleagues!",
+      "text": "By leveraging polymorphism in hafnia-based films, we demonstrate a promising approach to achieving both high dielectric performance and excellent reliability. This work has been published in *Nano Letters*.",
+      "textZh": "祝贺 Beikai Ding 和各位合作者！我们利用铪基氧化物薄膜的多晶型特性，展示了一种有望兼顾优异介电性能与出色可靠性的方法。这项工作已发表于 *Nano Letters*。",
+      "image": "assets/hazo-high-k.png",
+      "imageCredit": "© American Chemical Society",
+      "paperUrl": "https://doi.org/10.1021/acs.nanolett.6c03703"
+    },
+    {
+      "date": "2026-10",
       "lead": "Congratulations to Haoyu Lu and colleagues!",
       "text": "By tailoring grain growth in a 5.5 nm hafnium zirconium oxide film, we made devices that withstood more than 100 million polarization reversals at 225 °C and retained their memory state for at least 1,000 hours at that temperature. Our work was published in Science Bulletin.",
       "textZh": "祝贺 Haoyu Lu 和各位合作者！我们通过调控 5.5 纳米厚铪锆氧化物薄膜中的晶粒生长，使器件在 225 ℃ 下经受了超过 1 亿次极化翻转，并在同一温度下保持存储状态至少 1000 小时。这项工作发表于 Science Bulletin。",

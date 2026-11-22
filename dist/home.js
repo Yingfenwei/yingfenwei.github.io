@@ -66,7 +66,11 @@ function newsRow(news, dateFormat) {
   const time = element("time", dateFormat.format(new Date(news.date + "-01T00:00:00Z")));
   time.dateTime = news.date;
   const text = chinese && news.textZh ? news.textZh : news.text;
-  const content = news.url && !news.image ? link(text, news.url) : element("span", text);
+  const content = news.url && !news.image ? link("", news.url) : element("span");
+  const segments = text.split(/\*([^*]+)\*/);
+  segments.forEach((segment, index) => {
+    content.append(index % 2 === 1 ? element("em", segment) : segment);
+  });
   content.lang = chinese && news.textZh ? "zh-CN" : "en";
   if (news.lead && content.lang === "en") content.prepend(element("strong", news.lead), " ");
   const copy = element("div");
