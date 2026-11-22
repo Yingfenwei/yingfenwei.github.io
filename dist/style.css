@@ -5,6 +5,7 @@
   --red: #8b3547;
   --rule: #d8ddda;
   --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --name-size: clamp(3.2rem,5.7vw,5.35rem);
   font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
   color: var(--ink);
   background: #fafbf8;
@@ -26,21 +27,20 @@ nav,.actions { display: flex; align-items: center; gap: 1.8rem }
 nav a,.actions a,.foot a { text-decoration: none; font-size: .94rem; font-weight: 500 }
 nav a:hover,.foot a:hover { text-decoration: underline }
 .profile { display: grid; grid-template-columns: minmax(0, 1fr) minmax(185px, 27%); align-items: center; gap: 8%; padding: clamp(3rem,6vw,5.5rem) 0 }
-.portrait { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: center 32%; border-radius: 3px }
-.label { font-size: .82rem; font-weight: 650; letter-spacing: .14em; text-transform: uppercase; color: var(--red) }
+.portrait { width: 81%; justify-self: end; height: auto; aspect-ratio: 4/5; object-fit: cover; object-position: center 32%; border-radius: 3px }
+.label { font-size: calc(var(--name-size) / 3); font-weight: 650; letter-spacing: .115rem; line-height: 1.15; text-transform: uppercase; color: var(--red) }
 .university { display: flex; align-items: center; gap: .7rem; margin: 0 0 1rem }
 .university::before { content: ""; width: 25px; height: 2px; background: currentColor }
 h1,h2,h3,p { margin: 0 }
 h1,h2,h3 { font-family: var(--serif); font-weight: 400; text-wrap: pretty }
-h1 { font-size: clamp(3.2rem,5.7vw,5.35rem); line-height: 1.09; letter-spacing: -.055em }
+h1 { font-size: var(--name-size); line-height: 1.09; letter-spacing: -.055em }
 h1 span { display: inline-block; color: var(--muted); font: 400 clamp(1.2rem,2vw,1.6rem) "Songti SC", SimSun, serif; letter-spacing: .04em; margin-left: .12em }
 .role { font: 1.44rem/1.45 var(--serif); margin: .9rem 0 .15rem }
 .affiliation,.deck,.summary,#contact p,address,.authors { color: var(--muted) }
-.affiliation a { text-decoration: none }
-.affiliation a:hover { text-decoration: underline }
+.affiliation a:hover { text-decoration-thickness: 2px }
 .summary { max-width: 64ch; margin: 1.2rem 0 }
 .actions { gap: 1.3rem; flex-wrap: wrap }
-.actions a:not(.primary),.text-link,.article-link { color: var(--red); text-decoration: underline; text-underline-offset: .26em }
+.affiliation a,.actions a:not(.primary),.text-link,.article-link { color: var(--red); text-decoration: underline; text-underline-offset: .26em }
 .primary { background: var(--ink); color: white; padding: .55rem 1rem; border-radius: 3px }
 .primary:hover { background: var(--red); color: white }
 .section { padding: clamp(2.25rem,4.8vw,4.2rem) 0; border-top: 1px solid var(--rule) }
@@ -87,10 +87,11 @@ footer { border-top: 1px solid var(--rule) }
   .bar { align-items: flex-start; flex-direction: column; padding: .9rem 0; gap: .65rem }
   nav { flex-wrap: wrap; gap: .4rem 1.3rem }
   .profile { display: block; padding: 2rem 0; position: relative }
-  .portrait { position: absolute; top: 2rem; right: 0; width: 23%; max-width: 105px }
-  h1 { font-size: clamp(2.5rem,8.2vw,3.2rem); max-width: 74% }
+  .portrait { position: absolute; top: 2rem; right: 0; width: 18.63%; max-width: 85.05px }
+  :root { --name-size: clamp(2.5rem,8.2vw,3.2rem) }
+  h1 { max-width: 74% }
   h1 span { display: block; margin: .4rem 0 0 }
-  .university { font-size: .75rem; margin-bottom: .6rem }
+  .university { max-width: 74%; margin-bottom: .6rem }
   .role { margin-top: .8rem }
   .section-head { align-items: flex-start; flex-direction: column; gap: .5rem }
   .year-group { display: block }

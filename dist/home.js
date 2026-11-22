@@ -13,8 +13,21 @@ function link(label, url) {
 
 const language = document.documentElement.lang;
 const chinese = language === "zh-CN";
+
+function reportLink(source) {
+  return link(chinese && source.labelZh ? source.labelZh : source.label, source.url);
+}
+
+const reportsByPaper = new Map();
+for (const news of homepageContent.news) {
+  if (!news.paperUrl || !news.sources?.length) continue;
+  const reports = reportsByPaper.get(news.paperUrl) ?? new Map();
+  for (const source of news.sources) reports.set(source.url, source);
+  reportsByPaper.set(news.paperUrl, reports);
+}
+
 const papers = document.querySelector("#papers");
-const fullList = papers.dataset.list === "all";
+const standalone = Boolean(papers.closest("main.catalogue"));
 const yearLinks = document.querySelector(".year-links");
 const firstRecentYear = new Date().getFullYear() - 1;
 const paperArchive = element("details", "", "archive");
@@ -22,29 +35,30 @@ let olderPaperCount = 0;
 let currentYear;
 let yearList;
 for (const paper of [...homepageContent.publications].sort((a, b) => b.year - a.year)) {
-  if (!fullList && paper.selected === false) continue;
-  const archived = !fullList && paper.year < firstRecentYear;
+  const archived = !standalone && paper.year < firstRecentYear;
   if (paper.year !== currentYear) {
     currentYear = paper.year;
     const group = element("section", "", "year-group");
     yearList = element("div");
-    group.append(element(fullList ? "h2" : "h3", String(currentYear)), yearList);
-    if (yearLinks) {
-      group.id = `year-${currentYear}`;
-      yearLinks.append(link(String(currentYear), `#${group.id}`));
-    }
+    group.append(element(standalone ? "h2" : "h3", String(currentYear)), yearList);
+    group.id = `year-${currentYear}`;
+    const yearLink = link(String(currentYear), `#${group.id}`);
+    if (archived) yearLink.addEventListener("click", () => { paperArchive.open = true; });
+    yearLinks.append(yearLink);
     const container = archived ? paperArchive : papers;
     container.append(group);
   }
   const item = element("article", "", "paper");
   const meta = element("div", "", "paper-meta");
   meta.append(element("span", paper.venue, "venue"));
-  if (fullList && paper.citation) meta.append(element("span", paper.citation));
+  if (paper.citation) meta.append(element("span", paper.citation));
   if (paper.url) meta.append(link(chinese ? "出版商页面" : "Publisher", paper.url));
   if (paper.pdf) meta.append(link("PDF", paper.pdf));
-  const translatedTitle = !fullList && chinese && paper.titleZh;
-  const title = element(fullList ? "h3" : "h4", translatedTitle || paper.title);
-  title.lang = translatedTitle ? "zh-CN" : "en";
+  for (const source of reportsByPaper.get(paper.url)?.values() ?? []) {
+    meta.append(reportLink(source));
+  }
+  const title = element(standalone ? "h3" : "h4", paper.title);
+  title.lang = "en";
   const authors = element("p", "", "authors");
   authors.lang = "en";
   const [before, name, after] = paper.authors.split(/(Yingfen Wei[*#]?)/);
@@ -75,6 +89,16 @@ function newsRow(news, dateFormat) {
   if (news.lead && content.lang === "en") content.prepend(element("strong", news.lead), " ");
   const copy = element("div");
   copy.append(content);
+  const sources = element("div", "", "news-sources");
+  const reports = news.sources ?? [];
+  if (news.image && news.url && !reports.some(report => report.url === news.url)) {
+    sources.append(link(chinese ? "新闻原文" : "News release", news.url));
+  }
+  for (const report of reports) {
+    sources.append(reportLink(report));
+  }
+  if (news.paperUrl) sources.append(link(chinese ? "阅读论文" : "Read the paper", news.paperUrl));
+  if (sources.childElementCount) copy.append(sources);
   row.append(time);
   if (news.image) {
     const body = element("div", "", "illustrated-news");
@@ -88,10 +112,6 @@ function newsRow(news, dateFormat) {
     fullSize.append(image);
     if (news.imageCredit) fullSize.title = news.imageCredit;
     figure.append(fullSize);
-    const sources = element("div", "", "news-sources");
-    if (news.url) sources.append(link(chinese ? "新闻原文" : "News release", news.url));
-    if (news.paperUrl) sources.append(link(chinese ? "阅读论文" : "Read the paper", news.paperUrl));
-    copy.append(sources);
     body.append(copy, figure);
     row.append(body);
   } else {

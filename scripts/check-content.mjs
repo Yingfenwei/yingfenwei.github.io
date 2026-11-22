@@ -22,6 +22,16 @@ assert.ok(Array.isArray(content.news), 'news 应为列表');
 for (const [index, item] of content.news.entries()) {
   const label = `news 第 ${index + 1} 条`;
   checkTexts(item, ['date', 'text'], label);
+  if (item.sources !== undefined) {
+    assert.ok(Array.isArray(item.sources), `${label} 的 sources 应为列表`);
+    for (const [i, source] of item.sources.entries()) {
+      const sourceLabel = `${label} 的第 ${i + 1} 个报道来源`;
+      checkTexts(source, ['label', 'url'], sourceLabel);
+      const url = new URL(source.url);
+      assert.ok(['https:', 'http:'].includes(url.protocol), `${sourceLabel} 需要网页链接`);
+      if (source.labelZh !== undefined) checkTexts(source, ['labelZh'], sourceLabel);
+    }
+  }
   assert.match(item.date, /^\d{4}-(0[1-9]|1[0-2])$/, `${label} 日期格式应为 YYYY-MM`);
 }
 

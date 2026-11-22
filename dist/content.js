@@ -29,7 +29,7 @@ const homepageContent = {
       "authors": "Beikai Ding, Haoyu Lu, Xuanyu Zhao, Yu Li, Li Zheng, Shiwei Xia, Qi Liu, Hao Jiang*, Yingfen Wei*",
       "venue": "Nano Letters",
       "url": "https://pubs.acs.org/nalefd/article-abstract/doi/10.1021/acs.nanolett.6c03703/5448921/Polymorphic-Hf-Zr-O2-Based-Films-for-High-k?redirectedFrom=fulltext",
-      "citation": "(2026)",
+      "citation": "26(41), 14277–14283 (2026)",
       "titleZh": "用于高介电常数介质的多晶型 Hf(Zr)O₂ 基薄膜"
     },
     {
@@ -38,7 +38,7 @@ const homepageContent = {
       "authors": "Xiaodong Wang, Yu Li, Hao Jiang*, Shucheng Zhang, Guan Feng, Haoyu Lu, Xianzhe Chen, Xumeng Zhang, Can Li, Yingfen Wei*, Wenwu Li*, Qi Liu*, Ming Liu",
       "venue": "Advanced Functional Materials",
       "url": "https://advanced.onlinelibrary.wiley.com/doi/abs/10.1002/adfm.78487",
-      "citation": "(2026)",
+      "citation": "36(87), e78487 (2026)",
       "selected": false
     },
     {
@@ -46,8 +46,8 @@ const homepageContent = {
       "title": "Grain tailoring enables robust high-temperature ferroelectricity in ultrathin Hf1–xZrxO2 films",
       "authors": "Haoyu Lu, Yu Li, Liyang Ma, Geng Huangfu, Xuanyu Zhao, Changsong Xu, Hongjun Xiang, Yingfen Wei*, Hao Jiang*, Qi Liu, Ming Liu",
       "venue": "Science Bulletin",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/S2095927326009990",
-      "citation": "(2026)",
+      "url": "https://doi.org/10.1016/j.scib.2026.08.078",
+      "citation": "71(20), 5151–5154 (2026)",
       "titleZh": "通过晶粒调控实现超薄 Hf₁₋ₓZrₓO₂ 薄膜稳定的高温铁电性"
     },
     {
@@ -299,7 +299,7 @@ const homepageContent = {
       "authors": "Yingfen Wei, Pavan Nukala, Mart Salverda, Sylvia Matzen, Hong Jian Zhao, Jamo Momand, Arnoud Everhardt, Graeme R Blake, Philippe Lecoeur, Bart J Kooi, Jorge Íñiguez, Brahim Dkhil, Beatriz Noheda*",
       "venue": "Nature Materials",
       "url": "https://www.nature.com/articles/s41563-018-0196-0",
-      "citation": "17 (1), 1095-1100 (2018)",
+      "citation": "17(12), 1095–1100 (2018)",
       "selected": false
     }
   ],
@@ -320,7 +320,9 @@ const homepageContent = {
       "textZh": "祝贺 Haoyu Lu 和各位合作者！我们通过调控 5.5 纳米厚铪锆氧化物薄膜中的晶粒生长，使器件在 225 ℃ 下经受了超过 1 亿次极化翻转，并在同一温度下保持存储状态至少 1000 小时。这项工作发表于 Science Bulletin。",
       "image": "assets/hzo-science-bulletin.jpg",
       "imageCredit": "© Science Bulletin",
-      "url": "https://www.eurekalert.org/news-releases/1143111",
+      "sources": [
+        { "label": "EurekAlert!", "url": "https://www.eurekalert.org/news-releases/1143111" }
+      ],
       "paperUrl": "https://doi.org/10.1016/j.scib.2026.08.078"
     },
     {

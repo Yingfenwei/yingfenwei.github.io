@@ -10,7 +10,7 @@
 
 动态按月份倒序，论文按年份倒序。同月或同年的条目按填写顺序展示。中文译文可稍后补充，缺少译文时中文版先显示英文。
 
-中英文“论文”页共用 `publications` 列表，按发表时的英文题名展示。新论文默认也出现在首页的代表性论文中；若仅希望收入完整列表，在该条目中填写 `"selected": false`。可用 `citation` 补充卷期、页码或文章编号。
+中英文首页的论文区共用完整的 `publications` 列表，按发表时的英文题名展示。当年和上一年的论文默认展开，可点击“更早论文”或年份查看早年条目。新增论文会自动出现在两个首页和原有论文页中。可用 `citation` 补充卷期、页码或文章编号。
 
 ### 动态模板
 
@@ -20,6 +20,17 @@
   "text": "English news text",
   "textZh": "中文动态正文"
 },
+```
+
+同一条动态如有多个报道渠道，在该条目的 `sources` 中为每个渠道加一行。英文版显示 `label`，中文版优先显示可选的 `labelZh`。在新闻的 `paperUrl` 和对应论文的 `url` 中填写相同的 DOI 链接，报道来源就会同时显示在新闻和论文下方。下面是陆皓宇这条动态的链接配置。
+
+```json
+{
+  "sources": [
+    { "label": "EurekAlert!", "url": "https://www.eurekalert.org/news-releases/1143111" }
+  ],
+  "paperUrl": "https://doi.org/10.1016/j.scib.2026.08.078"
+}
 ```
 
 ### 论文模板
@@ -44,6 +55,8 @@
 3. 在 **Actions → Publish homepage → Run workflow** 中选择默认分支并运行一次。以后默认分支的页面、资源或发布配置有改动时，GitHub 会自动检查内容，并将 `dist/` 发布为网站根目录。
 
 ## 预览与修正
+
+在项目根目录运行 `python scripts/preview.py`，打开[英文实时预览](http://127.0.0.1:4173/#news)或[中文实时预览](http://127.0.0.1:4173/zh.html#news)。保存 `dist/` 内的文字、图片或样式后，预览会自动刷新。按 Ctrl+C 可停止服务。
 
 双击 `dist/index.html` 即可本地预览，点击页首的“中文”可检查译文。如已安装 Node.js，在项目根目录运行 `node scripts/check-content.mjs`，可提前检查内容格式、必填字段、动态月份和本地 PDF 路径。
 
