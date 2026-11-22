@@ -68,6 +68,7 @@ function newsRow(news, dateFormat) {
   const text = chinese && news.textZh ? news.textZh : news.text;
   const content = news.url && !news.image ? link(text, news.url) : element("span", text);
   content.lang = chinese && news.textZh ? "zh-CN" : "en";
+  if (news.lead && content.lang === "en") content.prepend(element("strong", news.lead), " ");
   const copy = element("div");
   copy.append(content);
   row.append(time);
