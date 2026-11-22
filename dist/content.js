@@ -309,8 +309,7 @@ const homepageContent = {
       "text": "Congratulations to Haoyu Lu and colleagues! By tailoring grain growth in a 5.5 nm hafnium zirconium oxide film, we made devices that withstood more than 100 million polarization reversals at 225 °C and retained their memory state for at least 1,000 hours at that temperature. Our work was published in Science Bulletin.",
       "textZh": "祝贺 Haoyu Lu 和各位合作者！我们通过调控 5.5 纳米厚铪锆氧化物薄膜中的晶粒生长，使器件在 225 ℃ 下经受了超过 1 亿次极化翻转，并在同一温度下保持存储状态至少 1000 小时。这项工作发表于 Science Bulletin。",
       "image": "assets/hzo-science-bulletin.jpg",
-      "caption": "The orientation map identifies two regions about 85 and 75 nm wide. Red stars in the lower panels mark the endurance and retention results at 225 °C. © Science Bulletin.",
-      "captionZh": "上方取向图标出了横向宽度约为 85 和 75 纳米的两个区域。下方两图中的红星分别标出器件在 225 ℃ 下的耐久性和保持性测试结果。图片 © Science Bulletin。",
+      "imageCredit": "© Science Bulletin",
       "url": "https://www.eurekalert.org/news-releases/1143111",
       "paperUrl": "https://doi.org/10.1016/j.scib.2026.08.078"
     },

@@ -81,7 +81,8 @@ function newsRow(news, dateFormat) {
     const fullSize = element("a");
     fullSize.href = news.image;
     fullSize.append(image);
-    figure.append(fullSize, element("figcaption", chinese ? news.captionZh || news.caption : news.caption));
+    if (news.imageCredit) fullSize.title = news.imageCredit;
+    figure.append(fullSize);
     const sources = element("div", "", "news-sources");
     if (news.url) sources.append(link(chinese ? "新闻原文" : "News release", news.url));
     if (news.paperUrl) sources.append(link(chinese ? "阅读论文" : "Read the paper", news.paperUrl));
