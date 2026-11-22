@@ -68,22 +68,29 @@ function newsRow(news, dateFormat) {
   const text = chinese && news.textZh ? news.textZh : news.text;
   const content = news.url && !news.image ? link(text, news.url) : element("span", text);
   content.lang = chinese && news.textZh ? "zh-CN" : "en";
-  const body = element("div");
-  body.append(content);
+  const copy = element("div");
+  copy.append(content);
+  row.append(time);
   if (news.image) {
+    const body = element("div", "", "illustrated-news");
     const figure = element("figure", "", "news-figure");
     const image = element("img");
     image.src = news.image;
-    image.alt = "";
+    image.alt = chinese ? "查看完整新闻配图" : "View full-size news image";
     image.loading = "lazy";
-    figure.append(image, element("figcaption", chinese ? news.captionZh || news.caption : news.caption));
-    body.append(figure);
+    const fullSize = element("a");
+    fullSize.href = news.image;
+    fullSize.append(image);
+    figure.append(fullSize, element("figcaption", chinese ? news.captionZh || news.caption : news.caption));
     const sources = element("div", "", "news-sources");
     if (news.url) sources.append(link(chinese ? "新闻原文" : "News release", news.url));
     if (news.paperUrl) sources.append(link(chinese ? "阅读论文" : "Read the paper", news.paperUrl));
-    body.append(sources);
+    copy.append(sources);
+    body.append(copy, figure);
+    row.append(body);
+  } else {
+    row.append(copy);
   }
-  row.append(time, body);
   return row;
 }
 
