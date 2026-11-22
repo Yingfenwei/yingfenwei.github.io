@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="980" viewBox="0 0 800 980">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#dce8f1"/><stop offset="1" stop-color="#a9bfd1"/></linearGradient></defs>
-  <rect width="800" height="980" rx="42" fill="url(#g)"/>
-  <circle cx="400" cy="350" r="150" fill="#f7fafc" opacity=".92"/>
-  <path d="M150 900c20-190 125-285 250-285s230 95 250 285" fill="#f7fafc" opacity=".92"/>
-  <text x="400" y="940" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#365a78">Replace with your portrait</text>
-</svg>

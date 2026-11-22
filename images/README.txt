@@ -1,1 +1,0 @@
-Add profile.jpg and research images here.
